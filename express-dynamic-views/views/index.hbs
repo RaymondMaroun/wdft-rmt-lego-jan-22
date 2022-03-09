@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Home</title>
+</head>
+<body>
+ <h1>Hello {{name}} {{lastName}}!</h1>
+ {{#with address}}
+ <p>{{street}}, {{number}}</p>
+ {{/with}}
+{{#unless address}}
+  <h3>WARNING: We can't find the address!</h3>
+{{/unless}}
+<ul>
+  {{#each cities}}
+    {{#if @first}}
+      <li><b>{{this}}</b></li>
+    {{else if @last}}
+      <li><i>{{this}}</i></li>
+    {{else}}
+      <li>{{this}}</li>
+    {{/if}}
+  {{/each}}
+</ul>
+</body>
+</html>
